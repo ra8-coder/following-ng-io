@@ -7,9 +7,33 @@
 </p>
 
 
-<mat-accordion *ngIf="items.length > 0">
+<div *ngIf="items.length > 0">
 	<div class="cart-item" *ngFor="let item of items">
 		<span>{{ item.name }}</span>
 		<span>{{ item.price | currency }}</span>
 	</div>
-</mat-accordion>
+</div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+  <div>
+    <label for="name">
+      Name
+    </label>
+
+    <!-- formControlName="name" -->
+    <input id="name" type="text" >
+  </div>
+
+  <div>
+    <label for="address">
+      Address
+    </label>
+
+    <!-- formControlName="address" -->
+    <input id="address" type="text" >
+  </div>
+
+  <button class="button" type="submit">Purchase</button>
+
+</form>

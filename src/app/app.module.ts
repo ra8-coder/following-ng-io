@@ -4,11 +4,12 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {
-	MatInputModule,
-	MatCardModule,
-	MatButtonModule,
-	MatToolbarModule,
-	MatExpansionModule
+  MatInputModule,
+  MatCardModule,
+  MatButtonModule,
+  MatToolbarModule,
+  MatExpansionModule,
+  MatListModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,34 +23,35 @@ import { ShippingComponent } from './shipping/shipping.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		TopBarComponent,
-		ProductListComponent,
-		ProductAlertComponent,
-		ProductDetailsComponent,
-		CartComponent,
-		ShippingComponent
-	],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		ReactiveFormsModule,
-		HttpClientModule,
-		MatInputModule,
-		MatCardModule,
-		MatButtonModule,
-		MatToolbarModule,
-		MatExpansionModule,
-		RouterModule.forRoot([
-			{ path: '', component: ProductListComponent },
-			{ path: 'products/:productId', component: ProductDetailsComponent },
-			{ path: 'cart', component: CartComponent },
-			{ path: 'shipping', component: ShippingComponent },
-		]),
-		BrowserAnimationsModule
-	],
-	providers: [],
-	bootstrap: [AppComponent]
+declarations: [
+  AppComponent,
+  TopBarComponent,
+  ProductListComponent,
+  ProductAlertComponent,
+  ProductDetailsComponent,
+  CartComponent,
+  ShippingComponent,
+],
+imports: [
+  BrowserModule,
+  AppRoutingModule,
+  ReactiveFormsModule,
+  HttpClientModule,
+  MatInputModule,
+  MatCardModule,
+  MatButtonModule,
+  MatToolbarModule,
+  MatExpansionModule,
+  MatListModule,
+  RouterModule.forRoot([
+    { path: '', component: ProductListComponent },
+    { path: 'products/:productId', component: ProductDetailsComponent },
+    { path: 'cart', component: CartComponent },
+    { path: 'shipping', component: ShippingComponent },
+  ]),
+  BrowserAnimationsModule
+],
+providers: [],
+bootstrap: [AppComponent]
 })
 export class AppModule { }
